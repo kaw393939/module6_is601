@@ -1,7 +1,3 @@
-Certainly! Below is the **fully updated Midterm Assessment** for **Module 6**, which now includes additional arithmetic operations such as **Percentage Calculation** and **Absolute Difference** in the list of required operations. These additions are integrated seamlessly without removing any existing functionalities. The assignment continues to emphasize the use of **pandas** for data management and **environment variables** for configuration management, ensuring clarity and comprehensiveness for all students.
-
----
-
 # Module 6: Midterm Assessment – Enhancing the Python Calculator Application
 
 ## Module Overview
@@ -159,7 +155,6 @@ Enhance the calculator application with the following features:
    - Manage configuration settings using a `.env` file and the `python-dotenv` package.
    - **Configuration Parameters:**
      - **Base Directories:**
-       - `CALCULATOR_BASE_DIR`: Base directory for the calculator.
        - `CALCULATOR_LOG_DIR`: Directory for log files.
        - `CALCULATOR_HISTORY_DIR`: Directory for history files.
      - **History Settings:**
