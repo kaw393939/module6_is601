@@ -359,7 +359,7 @@ To enhance your understanding of the codebase, please refer to the following Pyt
   - [Decorator Design Pattern](https://refactoring.guru/design-patterns/decorator): Learn how to implement the Decorator pattern to add responsibilities to objects dynamically.
 
 - **Data Management:**
-  - [pandas Documentation](https://pandas.pydata.org/docs/): Master data manipulation and analysis using the pandas library.
+  - [Pandas Documentation](https://pandas.pydata.org/docs/): Master data manipulation and analysis using the pandas library.
   - [Handling CSV Files in Python](https://docs.python.org/3/library/csv.html): Learn how to read from and write to CSV files using Python's built-in `csv` module.
   - **Usage of pandas in Calculator:**
     - [Real Python: Working with CSV Files in Python using pandas](https://realpython.com/python-pandas-read-write-files/): Practical guide on using `pandas` for reading and writing CSV files, which is essential for managing calculation history.
