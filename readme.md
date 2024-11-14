@@ -153,7 +153,6 @@ Enhance the calculator application with the following features:
    - Manage configuration settings using a `.env` file and the `python-dotenv` package.
    - **Configuration Parameters:**
      - **Base Directories:**
-       - `CALCULATOR_BASE_DIR`: Base directory for the calculator.
        - `CALCULATOR_LOG_DIR`: Directory for log files.
        - `CALCULATOR_HISTORY_DIR`: Directory for history files.
      - **History Settings:**
