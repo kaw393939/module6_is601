@@ -1,446 +1,490 @@
+# Module 6: Midterm Assessment – Enhancing the Python Calculator Application
 
-# **Module 6: Mid-Term Project - Advanced Calculator Application**
+## Module Overview
 
-## **Module Overview**
+Welcome to **Module 6**, the midterm assessment for your Python programming course. This module serves as a comprehensive evaluation of the skills and knowledge you've acquired thus far, particularly focusing on **Object-Oriented Programming (OOP)**, **design patterns**, **data management** using `pandas`, **configuration management** with environment variables, **logging**, and **version control** using Git. The midterm project will require you to build upon the calculator command-line application developed in Module 5 by adding new features and functionalities as outlined below. This assessment is designed to accommodate a diverse range of skill levels, ensuring that both novice and experienced programmers can successfully complete the project while being challenged to demonstrate their proficiency.
 
-Welcome to **Module 6**, the mid-term project segment of your Python programming course. In this module, you will apply the concepts and skills you've acquired thus far by developing an **Advanced Calculator Application**. This project is designed to accommodate a wide variety of students by offering two tiers of complexity: a **Basic Calculator** for those aiming for a **B** grade and an **Enhanced Calculator** for those striving for an **A** grade.
-
-Your primary objective is to design, implement, and thoroughly test a calculator application that demonstrates your understanding of advanced software design principles, design patterns, data management with `pandas`, and comprehensive testing methodologies. Additionally, both project tiers emphasize the integration of `pandas` for efficient data handling and `logging` for robust event tracking, ensuring that all students gain experience with these essential tools.
-
-## **Learning Outcomes**
+## Learning Outcomes
 
 By the end of this module, you will be able to:
 
-- **Design and Implement Software Applications:** Apply advanced design patterns to create scalable and maintainable Python applications.
-- **Data Management with pandas:** Utilize the `pandas` library for efficient data handling, storage, and retrieval.
-- **Logging for Event Tracking:** Implement logging to monitor application behavior and debug issues effectively.
-- **Testing and Quality Assurance:** Develop comprehensive unit and parameterized tests to ensure code reliability, achieving high test coverage.
-- **Continuous Integration (CI):** Configure GitHub Actions to automate testing and enforce code quality standards.
-- **Documentation and Best Practices:** Maintain clean, well-documented, and modular code adhering to best coding practices.
-- **Maintain Academic Integrity:** Understand and adhere to academic integrity policies, ensuring original work and proper version control practices.
+1. **Utilize Git for version control and collaborative development.**
+2. **Write and execute unit tests and integration tests for Python applications using Pytest.**
+3. **Implement object-oriented programming principles in Python.**
+4. **Create and manipulate CSV files using Python and the `pandas` library.**
+5. **Apply professional programming techniques such as DRY and error handling using LBYL and EAFP.**
+6. **Develop a command-line application using the REPL pattern.**
+7. **Implement design patterns such as Factory, Observer, Strategy, Singleton, and Memento to enhance code scalability and maintainability.**
+8. **Implement comprehensive logging strategies to monitor and debug applications.**
+9. **Apply professional terminology and concepts related to web systems development.**
+10. **Set up GitHub Actions for Continuous Integration (CI), automating the execution of tests to demonstrate DevOps principles to ensure software quality.**
 
-## **Project Overview**
+## Learning Pathway
 
-You are tasked with creating a **Calculator Application** that can perform various arithmetic operations. The project is divided into two tiers to accommodate different skill levels:
+### Read
 
-1. **Basic Calculator (Grade B)**
-2. **Enhanced Calculator (Grade A)**
+Your **primary textbook** for this module is the provided codebase from Module 5. Each `.py` file within the `app/` directory contains the relevant code for the calculator application, including OOP principles, design patterns, error handling, data management with `pandas`, configuration management using environment variables, logging, and version control implementation.
 
-### **1. Basic Calculator (Grade B)**
+### Watch
 
-**Objective:** Develop a functional calculator that performs basic arithmetic operations with a user-friendly command-line interface (CLI).
+See Canvas for uploaded instructional videos that cover advanced OOP concepts, design patterns, unit testing with Pytest, logging strategies, and best practices in Git version control.
 
-**Requirements:**
+### Review
 
-- **Supported Operations:**
-  - Addition
-  - Subtraction
-  - Multiplication
-  - Division
+Utilize the following cheat sheets as quick references to aid your study and project development:
 
-- **Features:**
-  - **REPL Interface:** Implement a Read-Eval-Print Loop for continuous user interaction.
-  - **User Commands:**
-    - `add`, `subtract`, `multiply`, `divide` - Perform corresponding operations.
-    - `history` - Display a list of past calculations.
-    - `exit` - Exit the application.
-    - `help` - Display available commands.
-  - **Error Handling:** Gracefully handle invalid inputs and exceptional scenarios (e.g., division by zero).
-  - **Data Management with pandas:**
-    - **History Management:** Store calculation history using `pandas` DataFrames.
-    - **Persistence:** Automatically save and load history from CSV files.
-  - **Logging:** Implement logging to record calculation events and errors.
-  - **Configuration Management:** Use environment variables to manage settings like history size and precision using the `dotenv` library.
+1. **[Advanced OOP Cheat Sheet](https://realpython.com/python-cheat-sheet/)**
+   - **Purpose:** Offers a quick reference for advanced OOP concepts and syntax in Python.
 
-- **Testing:**
-  - Write unit tests using `pytest` to cover all functionalities.
-  - Achieve at least **90% test coverage**.
+2. **[Design Patterns Cheat Sheet](https://refactoring.guru/design-patterns)**
+   - **Purpose:** Provides essential information on various design patterns, including Factory, Observer, Strategy, Singleton, and Memento.
 
-- **Documentation:**
-  - Provide a `README.md` with setup and usage instructions.
-  - Include docstrings and inline comments for clarity.
+3. **[pandas Cheat Sheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf)**
+   - **Purpose:** Quick reference for using `pandas` for data manipulation and analysis.
 
-### **2. Enhanced Calculator (Grade A)**
+4. **[CSV Handling Cheat Sheet](https://realpython.com/python-csv/)**
+   - **Purpose:** Comprehensive guide to reading from and writing to `CSV` files in Python using `pandas` and the built-in `csv` module.
 
-**Objective:** Develop a sophisticated calculator that incorporates advanced design patterns, data management, and extensive testing to provide a robust and scalable application.
+5. **[Test Coverage Cheat Sheet](https://pytest-cov.readthedocs.io/en/latest/)**
+   - **Purpose:** Quick reference for measuring and managing test coverage in Python projects.
 
-**Requirements:**
+6. **[Python Logging Cheat Sheet](https://realpython.com/python-logging/)**
+   - **Purpose:** Quick reference for implementing and configuring logging in Python applications.
 
-- **Supported Operations:**
-  - Addition
-  - Subtraction
-  - Multiplication
-  - Division
-  - Power (Exponentiation)
-  - Root
+7. **[Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)**
+   - **Purpose:** Quick reference for essential Git commands and workflows.
 
-- **Features:**
-  - **REPL Interface:** Implement a robust Read-Eval-Print Loop for enhanced user interaction.
-  - **Design Patterns Integration:**
-    - **Factory Pattern:** Dynamically create operation instances based on user input.
-    - **Observer Pattern:** Notify observers (e.g., logging, auto-saving) upon new calculations.
-    - **Memento Pattern:** Implement undo and redo functionalities by capturing the calculator's state.
-    - **Strategy Pattern:** Allow interchangeable operation execution strategies.
-    - **Facade Pattern:** Provide a simplified interface to complex subsystems within the calculator.
-  - **Data Management with pandas:**
-    - **History Management:** Store calculation history using `pandas` DataFrames.
-    - **Persistence:** Automatically save and load history from CSV files.
-  - **Logging:** Implement logging to record calculation events and errors.
-  - **Configuration Management:** Utilize environment variables and the `dotenv` library for flexible configuration.
-  - **User Commands:**
-    - `add`, `subtract`, `multiply`, `divide`, `power`, `root` - Perform corresponding operations.
-    - `history` - Display a list of past calculations.
-    - `undo`, `redo` - Undo or redo the last operation.
-    - `save`, `load` - Manually save or load calculation history.
-    - `clear` - Clear the calculation history.
-    - `exit` - Exit the application.
-    - `help` - Display available commands.
-  - **Error Handling:** Comprehensive error handling covering input validation, operational errors, and configuration issues.
+8. **[python-dotenv Documentation](https://saurabh-kumar.com/python-dotenv/)**
+   - **Purpose:** Guide on loading environment variables from `.env` files into Python applications.
 
-- **Testing:**
-  - Write comprehensive unit and parameterized tests using `pytest` to cover all functionalities and edge cases.
-  - Achieve **100% test coverage**, ensuring all code paths are tested.
+## Submit
 
-- **Continuous Integration (CI):**
-  - Configure GitHub Actions to automate testing and enforce **100% test coverage**.
-  - Set up the CI pipeline to fail builds if coverage falls below **100%**, prompting immediate attention.
+**Activity Type:** Advanced Hands-on Assignment  
 
-- **Documentation:**
-  - Provide a detailed `README.md` with setup, usage, and testing instructions.
-  - Include comprehensive docstrings and inline comments for maintainability.
-  - Create supplementary documentation for design patterns and architectural decisions.
+**Activity Title:** Midterm Project – Enhanced Calculator Command-Line Application  
 
-## **Project Structure**
+**Grading Type:** Points  
 
-Organize your project with a clear and modular directory layout to enhance readability and maintainability. Below is a recommended structure:
+**Submission Instructions:** Submit a link to your GitHub repository containing the project and complete the midterm test on Canvas.
 
-```
-calculator_project/
-├── app/
-│   ├── __init__.py
-│   ├── calculator_repl.py
-│   ├── calculation.py
-│   ├── calculator_config.py
-│   ├── calculator_memento.py
-│   ├── exceptions.py
-│   ├── history.py
-│   ├── input_validators.py
-│   └── operations.py
-├── tests/
-│   ├── test_calculations.py
-│   ├── test_calculator_repl.py
-│   ├── test_calculator_config.py
-│   ├── test_calculator_memento.py
-│   ├── test_exceptions.py
-│   ├── test_history.py
-│   ├── test_input_validators.py
-│   └── test_operations.py
-├── .github/
-│   └── workflows/
-│       └── python-app.yml
-├── .env
-├── .gitignore
-├── README.md
-├── requirements.txt
-└── setup.py
-```
+### Instructions
 
-## **Setup Instructions**
+#### Repository Setup:
 
-### **1. Repository Setup**
-
-1. **Initialize Git Repository:**
-   - Create a new Git repository locally and push it to GitHub.
-   - Ensure the repository is public or accessible to your instructors.
-
-2. **Project Directory:**
-   - Organize your project files following the structure outlined above.
-
-3. **Virtual Environment:**
-   - Create and activate a Python virtual environment to manage dependencies.
-     ```bash
-     python3 -m venv venv
-     source venv/bin/activate  # On Windows: venv\Scripts\activate
-     ```
-
-4. **Install Dependencies:**
-   - Create a `requirements.txt` file with the necessary packages.
-     ```plaintext
-     pandas
-     pytest
-     pytest-cov
-     python-dotenv
-     ```
-   - Install dependencies using pip.
-     ```bash
-     pip install -r requirements.txt
-     ```
-
-5. **Environment Variables:**
-   - Create a `.env` file in the root directory to manage configuration settings.
-     ```dotenv
-     CALCULATOR_BASE_DIR=./app
-     CALCULATOR_MAX_HISTORY_SIZE=1000
-     CALCULATOR_AUTO_SAVE=true
-     CALCULATOR_PRECISION=10
-     CALCULATOR_MAX_INPUT_VALUE=1e999
-     CALCULATOR_DEFAULT_ENCODING=utf-8
-     CALCULATOR_LOG_DIR=./logs
-     CALCULATOR_HISTORY_DIR=./history
-     CALCULATOR_HISTORY_FILE=./history/calculator_history.csv
-     CALCULATOR_LOG_FILE=./logs/calculator.log
-     ```
-
-### **2. Application Development**
-
-**Basic Calculator (Grade B):**
-
-- **Implement Basic Functionalities:**
-  - Develop basic arithmetic operations (`add`, `subtract`, `multiply`, `divide`).
-  - Ensure the REPL interface is functional and user-friendly.
-  - Integrate `pandas` for managing calculation history.
-  - Implement logging to track operations and errors.
-  
-- **Error Handling:**
-  - Handle invalid inputs gracefully, such as non-numeric entries and division by zero.
-
-- **Testing:**
-  - Write unit tests covering all operations and edge cases.
-  - Ensure at least **90% test coverage** using `pytest` and `pytest-cov`.
-
-**Enhanced Calculator (Grade A):**
-
-- **Implement Advanced Functionalities:**
-  - Develop additional arithmetic operations (`power`, `root`).
-  - Integrate advanced design patterns:
-    - **Factory Pattern:** Dynamically create operation instances based on user input.
-    - **Observer Pattern:** Notify observers (e.g., logging, auto-saving) upon new calculations.
-    - **Memento Pattern:** Implement undo and redo functionalities by capturing the calculator's state.
-    - **Strategy Pattern:** Allow interchangeable operation execution strategies.
-    - **Facade Pattern:** Provide a simplified interface to complex subsystems within the calculator.
-  - Utilize `pandas` for enhanced history management and data persistence.
-  - Implement comprehensive logging to track detailed operation events and errors.
-
-- **Error Handling:**
-  - Implement comprehensive error handling covering input validation, operational errors, and configuration issues.
-
-- **Testing:**
-  - Write comprehensive unit and parameterized tests covering all functionalities and edge cases.
-  - Achieve **100% test coverage** using `pytest` and `pytest-cov`.
-
-- **Continuous Integration (CI):**
-  - Configure GitHub Actions to automate testing and enforce **100% test coverage**.
-  - Ensure the CI pipeline fails builds if coverage falls below **100%**, prompting immediate attention.
-
-### **3. Testing**
-
-- **Unit Tests:**
-  - Write tests for each module and functionality in the `tests/` directory using `pytest`.
-  - Ensure tests cover both typical use cases and edge cases.
-
-- **Test Coverage:**
-  - Use `pytest-cov` to measure test coverage.
-  - **Basic Calculator (Grade B):** Aim for at least **90% coverage**.
-  - **Enhanced Calculator (Grade A):** Achieve **100% coverage**.
-
-- **Coverage Exceptions:**
-  - Use `# pragma: no cover` comments for lines that are not critical to test coverage, such as logging statements or exception handlers that are difficult to trigger.
-  
-  ```python
-  def some_method():
-      try:
-          # some code
-          pass
-      except SomeException:
-          handle_exception()  # pragma: no cover
-  ```
-
-### **4. Continuous Integration (CI) with GitHub Actions**
-
-- **Setup GitHub Actions Workflow:**
-  - Create a workflow file at `.github/workflows/python-app.yml` with the following configuration:
-  
-    ```yaml
-    name: Python application
-
-    on:
-      push:
-        branches: [ main ]
-      pull_request:
-        branches: [ main ]
-
-    jobs:
-      build:
-
-        runs-on: ubuntu-latest
-
-        steps:
-        - uses: actions/checkout@v2
-        - name: Set up Python 3.x
-          uses: actions/setup-python@v2
-          with:
-            python-version: '3.x'
-        - name: Install dependencies
-          run: |
-            python -m pip install --upgrade pip
-            pip install -r requirements.txt
-        - name: Run tests with coverage
-          run: |
-            pytest --cov=app tests/
-        - name: Check coverage
-          run: |
-            coverage report --fail-under=90  # Set to 100 for Enhanced Calculator
+- **Initialize Git Repository:**
+  - Ensure your Git repository is properly initialized and pushed to GitHub.
+  - **Directory Structure:** Organize your project with a well-structured directory layout as follows:
     ```
-  
-  - **For Basic Calculator (Grade B):**
-    - Set `--fail-under=90` to ensure at least **90% test coverage**.
-  
-  - **For Enhanced Calculator (Grade A):**
-    - Modify `--fail-under=90` to `--fail-under=100` to enforce **100% test coverage**.
+    project_root/
+    ├── app/
+    │   ├── __init__.py
+    │   ├── calculator.py
+    │   ├── calculation.py
+    │   ├── calculator_config.py
+    │   ├── calculator_memento.py
+    │   ├── exceptions.py
+    │   ├── history.py
+    │   ├── input_validators.py
+    │   ├── operations.py
+    │   └── logger.py
+    ├── tests/
+    │   ├── __init__.py
+    │   ├── test_calculator.py
+    │   ├── test_calculation.py
+    │   ├── test_operations.py
+    │   └── ...
+    ├── .env
+    ├── requirements.txt
+    ├── README.md
+    └── .github/
+        └── workflows/
+            └── python-app.yml
+    ```
 
-- **Enforce Coverage Standards:**
-  - Ensure that the CI pipeline fails if coverage thresholds are not met, prompting students to write additional tests.
+- **Virtual Environment:**
+  - Create and activate a virtual environment for your project.
+  - Example using `venv`:
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
 
-### **5. Documentation**
+- **Install Dependencies:**
+  - Ensure all necessary packages are listed in `requirements.txt`.
+  - Install dependencies using:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-- **README.md:**
-  - Provide comprehensive setup and usage instructions.
-  - Include examples of how to run the application and execute tests.
-  - Explain the project structure and design patterns used.
+- **Git Usage:** 
+  - Commit your changes regularly with clear and descriptive commit messages to track your progress.
+  - Use branches for feature development if necessary.
+  - Ensure that your Git history reflects the development process, which will be part of your grade.
+  - **IMPORTANT:** **YOU MUST HAVE A CLEAR COMMIT HISTORY OF YOUR PROGRESS. PROJECTS WITHOUT A CLEAR COMMIT HISTORY AS JUDGED BY THE INSTRUCTOR WILL BE FLAGGED AS A POSSIBLE ACADEMIC INTEGRITY VIOLATION**
 
-- **Code Documentation:**
-  - Use docstrings and inline comments to explain the purpose and functionality of classes, methods, and complex code blocks.
-  - Ensure that all modules are well-documented to facilitate understanding and maintainability.
+#### Application Development:
 
-## **Academic Integrity**
+Enhance the calculator application with the following features:
 
-**Academic Integrity** is a fundamental aspect of your educational journey. Upholding these principles ensures fairness, trust, and respect within the academic community. **Cheating, plagiarism, and any form of academic dishonesty are strictly prohibited** and will result in severe consequences.
+1. **Additional Arithmetic Operations:**
+   - **Mandatory Operations:**
+     - **Power:** Raise one number to the power of another.
+     - **Root:** Calculate the nth root of a number.
+     - **Modulus:** Compute the remainder of the division of two numbers.
+     - **Integer Division:** Perform division that results in an integer quotient, discarding any fractional part.
+   - **Implementation Details:**
+     - Utilize the **Factory Design Pattern** to manage the creation of different operation instances.
+     - Ensure that each operation takes exactly two numerical inputs and returns the correct result.
+     - Handle invalid operations gracefully with appropriate error messages.
 
-### **Key Principles:**
+2. **History Management with Undo/Redo:**
+   - Implement **Undo** and **Redo** functionalities using the **Memento Design Pattern**.
+   - Allow users to revert the last calculation or redo an undone calculation.
+   - Ensure that the history stack accurately reflects the state after each operation.
 
-- **Original Work:** All code submitted must be your own. Collaborating with peers is allowed only as specified by the course guidelines.
-- **Proper Attribution:** If you reference or utilize external resources, libraries, or code snippets, they must be properly cited.
-- **No Unauthorized Assistance:** Seeking help from unauthorized sources, including online platforms beyond course materials, is prohibited.
+3. **Observer Pattern for Logging and Auto-Save:**
+   - Implement the **Observer Design Pattern** to allow observers to respond to new calculations.
+   - **Observers to Implement:**
+     - **LoggingObserver:** Logs each calculation with details (operation, operands, result) to a log file.
+     - **AutoSaveObserver:** Automatically saves the calculation history to a CSV file using `pandas` whenever a new calculation is performed.
+   - Ensure that observers are registered with the Calculator and respond appropriately to events.
 
-### **Git Commit Requirements:**
+4. **Configuration Management:**
+   - Manage configuration settings using a `.env` file and the `python-dotenv` package.
+   - **Configuration Parameters:**
+     - **Base Directories:**
+       - `CALCULATOR_BASE_DIR`: Base directory for the calculator.
+       - `CALCULATOR_LOG_DIR`: Directory for log files.
+       - `CALCULATOR_HISTORY_DIR`: Directory for history files.
+     - **History Settings:**
+       - `CALCULATOR_MAX_HISTORY_SIZE`: Maximum number of history entries.
+       - `CALCULATOR_AUTO_SAVE`: Whether to auto-save history (`true` or `false`).
+     - **Calculation Settings:**
+       - `CALCULATOR_PRECISION`: Number of decimal places for calculations.
+       - `CALCULATOR_MAX_INPUT_VALUE`: Maximum allowed input value.
+       - `CALCULATOR_DEFAULT_ENCODING`: Default encoding for file operations.
+   - **Implementation Details:**
+     - Use `python-dotenv` to load environment variables from the `.env` file.
+     - Ensure that the application can load and validate these configurations on startup.
+     - Provide default values for configurations if environment variables are not set.
 
-To maintain academic integrity and demonstrate your development process, adhere to the following Git commit standards:
+5. **Error Handling and Input Validation:**
+   - Implement robust error handling using custom exceptions (`OperationError`, `ValidationError`, etc.).
+   - Validate user inputs to ensure they are numerical and within allowed ranges.
+   - Use `pandas` to manage data-related errors, such as issues with reading or writing CSV files.
+   - Provide meaningful error messages to guide the user in correcting their input.
 
-1. **Frequent Commits:**
-   - **Reasonable Frequency:** Commit your code regularly (e.g., after implementing a new feature, fixing a bug, or making significant changes). This demonstrates incremental progress and facilitates tracking your development process.
-   - **Avoid Large Commits:** Refrain from making excessively large commits that encapsulate multiple unrelated changes. Instead, break them down into smaller, manageable commits.
+6. **Logging:**
+   - Implement comprehensive logging strategies using Python’s `logging` module.
+   - Log important events, errors, and calculation details with appropriate logging levels (INFO, WARNING, ERROR).
+   - Configure logging to write to a file specified in the configuration (`CALCULATOR_LOG_FILE`).
+   - Ensure that all new operations are logged appropriately using the existing `Logger` class.
 
-2. **Descriptive Commit Messages:**
-   - **Clarity:** Each commit message should clearly describe the changes made. This helps in understanding the evolution of your project.
-   - **Consistency:** Follow a consistent format for commit messages, such as the [Conventional Commits](https://www.conventionalcommits.org/) standard.
-   - **Examples:**
-     - `feat: Implement addition operation`
-     - `fix: Handle division by zero error`
-     - `docs: Update README with setup instructions`
-     - `test: Add unit tests for subtraction operation`
+7. **Command-Line Interface (REPL):**
+   - Develop a user-friendly command-line interface using the **Read-Eval-Print Loop (REPL)** pattern.
+   - **Supported Commands:**
+     - `add`, `subtract`, `multiply`, `divide`, `power`, `root`, `modulus`, `int_divide` – Perform calculations.
+     - `history` – Display calculation history.
+     - `clear` – Clear calculation history.
+     - `undo` – Undo the last calculation.
+     - `redo` – Redo the last undone calculation.
+     - `save` – Manually save calculation history to file using `pandas`.
+     - `load` – Load calculation history from file using `pandas`.
+     - `help` – Display available commands.
+     - `exit` – Exit the application gracefully.
 
-3. **Matching Tests with Code:**
-   - **Synchronized Development:** Whenever you add or modify a feature, ensure that corresponding tests are also written or updated in the same commit.
-   - **Commit Pairing:** Structure your commits to pair implementation changes with their tests. For example, first commit the feature, then commit the associated tests, or combine them into a single cohesive commit.
-   - **Example:**
-     - Commit 1: `feat: Add multiplication operation to calculator`
-     - Commit 2: `test: Add unit tests for multiplication operation`
+8. **Unit Testing:**
+   - Write comprehensive unit tests using `pytest` for all new functionalities.
+   - Cover typical use cases and edge cases (e.g., division by zero, negative exponents).
+   - Implement parameterized tests to efficiently cover multiple scenarios.
+   - Achieve **90% Test Coverage or Better** using tools like `pytest-cov`.
+   - **Handling Coverage Exceptions:** Use coverage comments (e.g., `# pragma: no cover`) for lines that are intentionally excluded from coverage metrics.
 
-4. **Comprehensive History:**
-   - **Granularity:** Ensure that each commit represents a single logical change. This makes it easier to review and revert changes if necessary.
-   - **Avoid Merge Commits:** Where possible, use fast-forward merges to maintain a linear commit history. This simplifies the project history and enhances readability.
+9. **Serialization and Data Persistence:**
+   - **Saving History:**
+     - Use `pandas` to serialize calculation history to a CSV file.
+     - Implement a method to convert the history (a list of `Calculation` instances) into a pandas DataFrame and save it to the file specified in the configuration (`CALCULATOR_HISTORY_FILE`).
+     - Ensure that the CSV file includes columns for operation, operands, result, and timestamp.
+   - **Loading History:**
+     - Use `pandas` to deserialize calculation history from a CSV file.
+     - Implement a method to read the CSV file into a pandas DataFrame and convert each row back into a `Calculation` instance.
+     - Handle cases where the CSV file does not exist or is malformed gracefully, providing appropriate error messages.
 
-5. **Commit Integrity:**
-   - **Complete Changes:** Each commit should include all necessary files and changes required for that specific update. Avoid partial commits that leave the project in an incomplete state.
-   - **No Unrelated Files:** Ensure that only relevant files are included in each commit. Exclude temporary files, build artifacts, or other unrelated files using a `.gitignore` file.
+10. **GitHub Actions for Continuous Integration (CI):**
+    - Set up GitHub Actions to automatically run your tests and measure test coverage on each push or pull request to the `main` branch.
+    - **Workflow Requirements:**
+      - **Check Out Code:** Use `actions/checkout` to access the repository.
+      - **Set Up Python Environment:** Use `actions/setup-python` to specify the Python version.
+      - **Install Dependencies:** Install all required packages from `requirements.txt`.
+      - **Run Tests:** Execute `pytest` with coverage measurement using `pytest-cov`.
+      - **Enforce Coverage Threshold:** Ensure that the CI pipeline fails if test coverage falls below **90%**.
+    - **Example Workflow File (`.github/workflows/python-app.yml`):**
+      ```yaml
+      name: Python application
 
-### **Enforcement:**
+      on:
+        push:
+          branches:
+            - main  # Run tests on any push to the main branch
+        pull_request:
+          branches:
+            - main  # Run tests on any pull request to the main branch
 
-- **GitHub Actions Integration:**
-  - **Automated Checks:** Configure GitHub Actions to perform automated checks on commit messages and enforce commit standards.
-  - **Hooks and Scripts:** Utilize Git hooks or scripts to validate commit messages and ensure that tests are included alongside code changes.
-  
-- **Instructor Review:**
-  - **Commit History Evaluation:** Instructors will review your commit history to assess adherence to the commit standards and academic integrity policies.
-  - **Consistency and Transparency:** A well-structured commit history reflects a transparent and disciplined development process.
+      jobs:
+        test:
+          runs-on: ubuntu-latest
 
-### **Consequences of Academic Dishonesty:**
+          steps:
+            - name: Check out the code
+              uses: actions/checkout@v3
 
-Violations of academic integrity policies will result in disciplinary actions, which may include:
+            - name: Set up Python
+              uses: actions/setup-python@v4
+              with:
+                python-version: '3.x'  # Set your desired Python version
 
-- **Grade Penalties:** Reduction or forfeiture of project grades.
-- **Course Failure:** Failure of the project or the entire course, depending on the severity of the violation.
-- **Further Disciplinary Actions:** Additional consequences as per institutional policies.
+            - name: Install dependencies from requirements.txt
+              run: |
+                python -m pip install --upgrade pip
+                pip install -r requirements.txt
+                pip install pytest pytest-cov  # Ensure pytest-cov is installed
 
-**Always strive to produce your own work, understand the material, and seek help through authorized channels such as instructors, teaching assistants, and official course forums.**
+            - name: Run tests with pytest and enforce 90% coverage
+              run: |
+                pytest --cov=app --cov-fail-under=90
+      ```
+    - **Handling Coverage Exceptions:** In your code, add comments like `# pragma: no cover` to lines that are intentionally excluded from coverage metrics (e.g., lines with `pass` or `continue`). This ensures that your coverage report accurately reflects the test coverage without being penalized for these lines.
+      ```python
+      if some_condition:
+          pass  # pragma: no cover
+      ```
 
-## **Submission Instructions**
+11. **Documentation:**
+    - Create a detailed `README.md` file with setup and usage instructions.
+    - **README.md Should Include:**
+      - **Project Description:** Overview of the calculator application and its features.
+      - **Installation Instructions:** Steps to set up the virtual environment and install dependencies.
+      - **Configuration Setup:** Instructions on creating and configuring the `.env` file with necessary environment variables.
+      - **Usage Guide:** Detailed explanation of how to use the command-line interface and its supported commands.
+      - **Testing Instructions:** How to run unit tests and check test coverage.
+      - **CI/CD Information:** Overview of GitHub Actions workflow and its purpose.
+    - Document your code with meaningful comments and docstrings to enhance readability and maintainability.
+    - Include instructions on setting up `.env` files and configuring logging.
 
-1. **GitHub Repository:**
-   - Ensure your code is pushed to GitHub with a clear and descriptive commit history.
-   - The repository should follow the prescribed directory structure.
-   - Include a detailed `README.md` with all necessary information.
+#### Best Practices:
 
-2. **Testing:**
-   - Ensure that all tests pass locally before submission.
-   - Verify that the GitHub Actions workflow runs successfully and enforces the coverage requirements.
+- **DRY Principle:** Apply the DRY (Don't Repeat Yourself) principle and other best practices to ensure your code is maintainable and efficient.
+- **Modular Design:** Organize your code into modules and classes to enhance readability and reusability.
+- **Logging:** Ensure that all new operations are logged appropriately using the existing `Logger` class.
 
-3. **Final Submission:**
-   - Submit the link to your GitHub repository through the designated platform (e.g., course management system).
+#### Optional Features (For Advanced Students - AT LEAST ONE OF THESE IS REQUIRED FOR AN A):
 
-## **Grading Criteria**
+1. **Dynamic Help Menu:**
+   - Implement the **Decorator Design Pattern** to dynamically generate the help menu based on the available operations.
+   - Ensure that adding new operations automatically updates the help menu without manual changes.
+   - **Tutorial Link:** [Decorator Design Pattern in Python](https://refactoring.guru/design-patterns/decorator/python/example)
 
-### **Basic Calculator (Grade B):**
+2. **Color-Coded Outputs:**
+   - Add color-coded outputs to improve the readability and user experience of the application.
+   - **Tutorial Link:** [Colorama Library Tutorial](https://realpython.com/python-coloring-terminal-output/)
 
-- **Functionality (30%):** Correct implementation of basic arithmetic operations and user commands.
-- **Data Management with pandas (15%):** Effective use of `pandas` for storing and retrieving calculation history.
-- **Logging (15%):** Proper implementation of logging to track operations and errors.
-- **Error Handling (20%):** Robust handling of invalid inputs and exceptional scenarios.
-- **Testing (15%):** Comprehensive unit tests achieving at least **90% test coverage**.
-- **Documentation (5%):** Clear and concise documentation with a well-structured `README.md`.
+3. **Additional Design Patterns:**
+   - Incorporate the **Command Design Pattern** to encapsulate requests as objects, allowing for parameterization and queuing of operations.
+   - **Tutorial Link:** [Command Pattern in Python](https://refactoring.guru/design-patterns/command/python/example)
 
-### **Enhanced Calculator (Grade A):**
+## Grading Rubric
 
-- **Functionality (25%):** Complete implementation of all specified operations and advanced user commands.
-- **Design Patterns (25%):** Effective integration of Factory, Observer, Memento, Strategy, and Facade patterns.
-- **Data Management with pandas (15%):** Efficient use of `pandas` for history management and data persistence.
-- **Logging (10%):** Comprehensive logging to record detailed operation events and errors.
-- **Error Handling (10%):** Comprehensive and sophisticated error management covering all possible scenarios.
-- **Testing (10%):** Exhaustive unit and parameterized tests achieving **100% test coverage**.
-- **Continuous Integration (5%):** Proper setup and functioning of GitHub Actions to enforce coverage standards.
-- **Documentation (5%):** Detailed and thorough documentation, including explanations of design patterns and architectural decisions.
+Your midterm project will be evaluated based on the following criteria:
 
-## **Suggested Project Workflow**
+| **Category**                      | **Excellent (90-100%)**                                                                                                                                                                | **Good (75-89%)**                                                                                                                                                  | **Satisfactory (60-74%)**                                                                                                                            | **Needs Improvement (<60%)**                                                                                               | **Points** |
+|-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|------------|
+| **Functionality**                 | All mandatory features are fully implemented and function correctly. Optional features are also implemented successfully.                                                            | All mandatory features are implemented and function correctly. Most optional features are implemented.                                                            | Most mandatory features are implemented with minor issues. Few optional features are implemented.                                                    | Several mandatory features are missing or do not function correctly. Optional features are not implemented.                  | /40        |
+| **Code Quality**                  | Code is clean, well-organized, and follows best practices. Proper use of OOP principles and design patterns. Code is free of unnecessary complexity and duplication.                     | Code is organized and follows best practices. Good use of OOP principles and design patterns with minor issues.                                                          | Code follows some best practices but may have areas of improvement. Use of OOP principles and design patterns is inconsistent.                        | Code is disorganized, difficult to read, and does not follow best practices. Poor use of OOP principles and design patterns. | /20        |
+| **Unit Testing at least 90%**                  | Comprehensive unit tests covering all new features, including edge cases. All tests pass successfully.                                                                                | Good coverage of unit tests for new features with most edge cases handled. All tests pass successfully.                                                             | Basic unit tests are present but lack coverage for edge cases. Some tests may fail or have issues.                                                   | Inadequate or missing unit tests. Many tests fail or do not cover new features effectively.                                   | /15        |
+| **Error Handling**                | Robust error handling for all new features. The application gracefully manages invalid inputs and unexpected scenarios without crashing.                                               | Good error handling with minor issues. Most invalid inputs and unexpected scenarios are managed gracefully.                                                        | Basic error handling is implemented but may not cover all invalid inputs or unexpected scenarios.                                                   | Inadequate error handling. The application crashes or behaves unpredictably with invalid inputs or unexpected scenarios.       | /10        |
+| **Logging Implementation**        | Logging is comprehensive and effectively records all new operations with detailed information. Proper use of logging levels and log management (if optional features implemented).       | Logging covers all new operations with sufficient detail. Proper use of logging levels.                                                                           | Basic logging is implemented but may lack detail or miss some new operations.                                                                      | Inadequate or missing logging for new operations. Logs lack useful information or are not properly managed.                    | /10        |
+| **Documentation**                 | Clear and thorough documentation. `README.md` includes detailed instructions on using new features. Additional documentation explains code enhancements effectively.                      | Good documentation. `README.md` includes instructions on new features. Additional documentation covers most code enhancements.                                       | Basic documentation is present but may lack detail. `README.md` includes some instructions on new features.                                           | Inadequate or missing documentation. `README.md` lacks instructions or does not explain new features effectively.              | /5         |
+| **Git Utilization**               | Exemplary use of Git for version control and collaborative development. Commit history is clear, descriptive, and reflects the development process. Branching and merging are handled effectively. | Good use of Git for version control and collaborative development. Commit messages are descriptive and reflect the development process. Minor issues with branching or merging. | Basic use of Git for version control. Commit messages are somewhat descriptive. Limited use of branching or merging.                                 | Inadequate use of Git for version control. Commit history is unclear or lacks descriptive messages.                               | /10        |
+| **Optional Features Implementation** | All optional features are fully implemented and function correctly, enhancing the application significantly.                                                                            | Most optional features are implemented and function correctly, adding noticeable improvements to the application.                                                 | Some optional features are implemented with minor issues, providing limited enhancements to the application.                                         | Few or no optional features are implemented, with little to no impact on the application's functionality.                      | /10        |
+| **Total**                          |                                                                                                                                                                                        |                                                                                                                                                                    |                                                                                                                                                       |                                                                                                                            | /100       |
 
-1. **Planning:**
-   - Outline the features and functionalities you intend to implement.
-   - Design the architecture, especially if opting for the Enhanced Calculator with multiple design patterns.
+## Reflect
 
-2. **Development:**
-   - Start by setting up the project structure and configuring environment variables.
-   - Implement the core functionalities first (Basic Calculator operations), then progressively add more features.
-   - Integrate `pandas` and `logging` early to ensure consistent data management and event tracking.
+**Title:** Module 6 In-Depth Reflection  
+**Grading Type:** Points  
+**Instructions:**
+- **Reflection Essay:** Compose a comprehensive reflection (300-400 words) on your experience enhancing the professional calculator command-line application.
+  - **Application of Concepts:** Analyze how the additional arithmetic operations, undo/redo functionality, design patterns, data management with `pandas`, configuration management using environment variables, logging, and Git version control learned in this module can be applied to real-world programming scenarios.
+  - **Challenges and Solutions:** Discuss any challenges you encountered during the project, particularly in implementing design patterns, adding new operations, handling data persistence with `pandas`, managing configurations with environment variables, ensuring comprehensive testing, or effectively using Git for version control, and the strategies you used to overcome them.
+  - **Self-Evaluation:** Evaluate your current level of confidence in using Git for version control, writing and executing unit tests with Pytest, implementing advanced OOP principles and design patterns, managing data with CSV files using `pandas`, applying professional programming techniques, and implementing logging. Identify areas where you feel proficient and areas where you need further practice or support.
+- **Purpose:** This activity aims to encourage deep metacognition and help you connect new knowledge with prior experiences and future applications.
 
-3. **Testing:**
-   - Write unit tests alongside your development to ensure each component works as intended.
-   - Use `pytest` and `pytest-cov` to monitor test coverage continuously.
-   - Address any coverage gaps before proceeding.
+## Midterm Test
 
-4. **Continuous Integration:**
-   - Set up GitHub Actions to automate testing on every push or pull request.
-   - Ensure that the CI pipeline enforces the required coverage thresholds.
+**Title:** Midterm Test – Python Calculator Application Enhancement  
+**Grading Type:** Points  
+**Instructions:**
+- **Midterm Test:** Complete the midterm test on Canvas as specified by your instructor.
+  - The test will assess your understanding of the concepts applied in enhancing the calculator application, including OOP principles, design patterns, data management with `pandas`, configuration management using environment variables, logging, unit testing, and Git version control.
+  - **Question Types:** The test may include multiple-choice, short answer, and code analysis questions to thoroughly evaluate your comprehension and application of the module's content.
+- **Preparation:** 
+  - Review all provided materials, including the codebase, supplementary articles, instructional videos, and cheat sheets.
+  - Ensure you understand how to implement and test advanced OOP concepts and design patterns.
+  - Familiarize yourself with using `pandas` for data management, managing configurations with environment variables, implementing logging, writing unit tests with Pytest, and effectively using Git for version control.
 
-5. **Documentation:**
-   - Maintain comprehensive documentation throughout the development process.
-   - Update the `README.md` with any new features or changes.
+## Watch
 
-6. **Final Review:**
-   - Conduct a thorough review of your codebase to ensure all requirements are met.
-   - Validate that all tests pass and coverage thresholds are achieved.
-   - Ensure that the GitHub Actions workflow is functioning correctly.
+See Canvas for uploaded instructional videos that cover advanced OOP concepts, design patterns, unit testing with Pytest, logging strategies, and best practices in Git version control.
 
-## **Conclusion**
+## Read
 
-This mid-term project is an opportunity to showcase your proficiency in Python programming, software design, data management, and testing. Whether you opt for the Basic or Enhanced Calculator, ensure that your application is well-designed, thoroughly tested, and meticulously documented. Embrace the challenge to apply the concepts learned and produce a high-quality software solution.
+Your **primary textbook** for this module is the provided codebase from Module 5. Each `.py` file within the `app/` directory contains the relevant code for the calculator application, including OOP principles, design patterns, error handling, data management with `pandas`, configuration management using environment variables, logging, and version control implementation.
 
-If you have any questions or require further assistance, feel free to reach out through the course forums or office hours. Good luck, and happy coding!
+## Supplementary Articles
+
+To enhance your understanding of the codebase, please refer to the following Python documentation and resources:
+
+- **Object-Oriented Programming:**
+  - [Python Data Classes](https://docs.python.org/3/library/dataclasses.html): Understand how to use data classes to simplify class definitions and manage data attributes efficiently.
+  - [Python Properties](https://docs.python.org/3/library/functions.html#property): Learn how to use `@property` decorators to create managed attributes in your classes.
+  - [Python Abstract Base Classes (ABC)](https://docs.python.org/3/library/abc.html): Explore how to define abstract base classes to create interfaces for your classes.
+
+- **Design Patterns:**
+  - [Strategy Design Pattern](https://refactoring.guru/design-patterns/strategy): Understand and implement the Strategy design pattern to define a family of algorithms.
+  - [Factory Method Design Pattern](https://refactoring.guru/design-patterns/factory-method): Learn how to implement the Factory design pattern to manage object creation.
+  - [Observer Design Pattern](https://refactoring.guru/design-patterns/observer): Implement the Observer design pattern to allow objects to subscribe and react to events.
+  - [Singleton Design Pattern](https://refactoring.guru/design-patterns/singleton): Learn how to implement the Singleton pattern to ensure a class has only one instance.
+  - [Memento Design Pattern](https://refactoring.guru/design-patterns/memento): Gain a deeper understanding of how the Memento pattern can be used to capture and restore an object's state.
+  - [Decorator Design Pattern](https://refactoring.guru/design-patterns/decorator): Learn how to implement the Decorator pattern to add responsibilities to objects dynamically.
+
+- **Data Management:**
+  - [pandas Documentation](https://pandas.pydata.org/docs/): Master data manipulation and analysis using the pandas library.
+  - [Handling CSV Files in Python](https://docs.python.org/3/library/csv.html): Learn how to read from and write to CSV files using Python's built-in `csv` module.
+  - **Usage of pandas in Calculator:**
+    - [Real Python: Working with CSV Files in Python using pandas](https://realpython.com/python-pandas-read-write-files/): Practical guide on using `pandas` for reading and writing CSV files, which is essential for managing calculation history.
+
+- **Configuration Management:**
+  - [python-dotenv Documentation](https://saurabh-kumar.com/python-dotenv/): Learn how to load environment variables from `.env` files into your Python applications.
+  - [Managing Secrets in Git](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-security-hardening-for-git): Best practices for keeping sensitive data out of version control.
+
+- **Logging:**
+  - [Python Logging Module](https://docs.python.org/3/library/logging.html): Implement logging in your applications to track events, errors, and debug information.
+  - [Real Python: Logging in Python](https://realpython.com/python-logging/): A comprehensive guide to implementing and configuring logging in Python applications.
+
+- **Testing and Coverage:**
+  - [Achieving 90%+ Test Coverage in Python](https://pytest-cov.readthedocs.io/en/latest/): Use coverage tools with pytest to measure and achieve full test coverage.
+
+- **Version Control:**
+  - [Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf): Quick reference for essential Git commands and workflows.
+  - [GitHub Actions Documentation](https://docs.github.com/en/actions): Learn how to set up and use GitHub Actions for Continuous Integration.
+
+## Tips for Success
+
+- **Manage Your Time:** Allocate sufficient time to plan, implement, test, and document your enhancements.
+- **Focus on Quality:** Prioritize writing clean, maintainable code over adding numerous features.
+- **Leverage Design Patterns:** Utilize the design patterns learned to structure your enhancements effectively.
+- **Write Comprehensive Tests:** Ensure that your unit tests cover a wide range of scenarios, including edge cases.
+- **Utilize Git Effectively:** Regularly commit your work with descriptive messages. Use branches for feature development to maintain a clean main branch.
+- **Leverage pandas for Data Management:** Use `pandas` to efficiently handle calculation history, making data manipulation and persistence straightforward.
+- **Manage Configurations with Environment Variables:** Use environment variables to manage configuration settings securely and flexibly.
+- **Seek Help When Needed:** If you encounter challenges, refer to the supplementary articles or reach out to your instructors for guidance.
+
+## Submission Deadline
+
+Please ensure that your GitHub repository link and completion of the midterm test on Canvas are submitted by **[Insert Deadline Here]**. Late submissions may be subject to grade penalties as per the course policy.
+
+---
+
+**Good luck with your midterm assessment!** Demonstrate your understanding and proficiency by thoughtfully enhancing the calculator application, showcasing the skills you've developed throughout the course.
+
+---
+
+## Appendix: Provided Code Functionalities
+
+To ensure clarity on the functionalities you are expected to implement, here is an overview of the key components from the provided codebase:
+
+### 1. Calculation Model (`calculation.py`)
+
+- **Purpose:** Represents a single calculation, encapsulating operation details, operands, result, and timestamp.
+- **Features:**
+  - Supports operations: Addition, Subtraction, Multiplication, Division, Power, Root.
+  - Methods for performing calculations, serializing to/from dictionaries.
+  - Handles errors like division by zero and invalid operations.
+
+### 2. Calculator Configuration (`calculator_config.py`)
+
+- **Purpose:** Manages configuration settings using environment variables.
+- **Features:**
+  - Configurable parameters: directories, history size, auto-save, precision, input limits, encoding.
+  - Methods to validate configurations.
+  - Utilizes `python-dotenv` to load environment variables from a `.env` file.
+
+### 3. Calculator Memento (`calculator_memento.py`)
+
+- **Purpose:** Implements the Memento Design Pattern for undo/redo functionality.
+- **Features:**
+  - Stores the history of calculations.
+  - Methods to serialize/deserialize mementos.
+
+### 4. Calculator Class (`calculator.py`)
+
+- **Purpose:** Core class managing operations, history, observers, and configuration.
+- **Features:**
+  - Implements Strategy, Factory, Observer, and Memento Design Patterns.
+  - Methods for performing operations, managing history, undo/redo, saving/loading history using `pandas`.
+  - Observer registration and notification.
+  - Handles configuration settings loaded from environment variables.
+
+### 5. Exception Hierarchy (`exceptions.py`)
+
+- **Purpose:** Custom exceptions for error handling.
+- **Classes:**
+  - `CalculatorError`: Base class.
+  - `ValidationError`: Input validation failures.
+  - `OperationError`: Calculation execution failures.
+  - `ConfigurationError`: Configuration issues.
+
+### 6. History Management (`history.py`)
+
+- **Purpose:** Implements the Observer Design Pattern for logging and auto-saving.
+- **Classes:**
+  - `HistoryObserver` (Abstract Base Class)
+  - `LoggingObserver`: Logs calculations to a file.
+  - `AutoSaveObserver`: Automatically saves history based on configuration using `pandas`.
+
+### 7. Input Validation (`input_validators.py`)
+
+- **Purpose:** Validates and sanitizes user inputs.
+- **Features:**
+  - Validates numerical inputs against configuration constraints.
+  - Converts inputs to `Decimal` type.
+  - Utilizes `pandas` to manage data-related errors during saving/loading.
+
+### 8. Operation Classes (`operations.py`)
+
+- **Purpose:** Implements various arithmetic operations using the Strategy Design Pattern.
+- **Classes:**
+  - `Operation` (Abstract Base Class)
+  - `Addition`, `Subtraction`, `Multiplication`, `Division`, `Power`, `Root`, `Modulus`, `IntegerDivision`: Concrete implementations.
+  - `OperationFactory`: Factory class to create operation instances based on operation type.
+
+### 9. Calculator REPL (`calculator_repl.py`)
+
+- **Purpose:** Provides a command-line interface for user interaction.
+- **Features:**
+  - Processes user commands and interacts with the `Calculator` class.
+  - Supports commands like `add`, `subtract`, `multiply`, `divide`, `power`, `root`, `modulus`, `int_divide`, `history`, `undo`, `redo`, `save`, `load`, `help`, `exit`.
+  - Handles user input, displays results, and manages application flow.
+
+### 10. GitHub Actions Workflow (`.github/workflows/python-app.yml`)
+
+- **Purpose:** Automates testing and coverage checks on each push or pull request.
+- **Features:**
+  - Checks out code, sets up Python environment, installs dependencies.
+  - Runs tests with `pytest` and enforces a minimum coverage threshold.
+
+---
+
+**Note:** Ensure that your project aligns with the provided code functionalities and adheres to best practices in software development. Utilize the supplementary articles and instructional materials to guide your implementation and enhance your understanding of the concepts involved.
+
+Good luck, and we look forward to seeing your enhanced Python Calculator Application!
