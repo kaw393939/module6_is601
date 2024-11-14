@@ -1,3 +1,7 @@
+Certainly! Below is the **fully updated Midterm Assessment** for **Module 6**, which now includes additional arithmetic operations such as **Percentage Calculation** and **Absolute Difference** in the list of required operations. These additions are integrated seamlessly without removing any existing functionalities. The assignment continues to emphasize the use of **pandas** for data management and **environment variables** for configuration management, ensuring clarity and comprehensiveness for all students.
+
+---
+
 # Module 6: Midterm Assessment – Enhancing the Python Calculator Application
 
 ## Module Overview
@@ -59,7 +63,7 @@ Utilize the following cheat sheets as quick references to aid your study and pro
 
 ## Submit
 
-**Activity Type:** Advanced Hands-on Assignment  
+**Activity Type:** Midterm Test – Project-Based Assessment  
 
 **Activity Title:** Midterm Project – Enhanced Calculator Command-Line Application  
 
@@ -132,6 +136,8 @@ Enhance the calculator application with the following features:
      - **Root:** Calculate the nth root of a number.
      - **Modulus:** Compute the remainder of the division of two numbers.
      - **Integer Division:** Perform division that results in an integer quotient, discarding any fractional part.
+     - **Percentage Calculation:** Calculate the percentage of one number with respect to another (e.g., `Percentage(a, b)` computes `(a / b) * 100`).
+     - **Absolute Difference:** Calculate the absolute difference between two numbers.
    - **Implementation Details:**
      - Utilize the **Factory Design Pattern** to manage the creation of different operation instances.
      - Ensure that each operation takes exactly two numerical inputs and returns the correct result.
@@ -153,6 +159,7 @@ Enhance the calculator application with the following features:
    - Manage configuration settings using a `.env` file and the `python-dotenv` package.
    - **Configuration Parameters:**
      - **Base Directories:**
+       - `CALCULATOR_BASE_DIR`: Base directory for the calculator.
        - `CALCULATOR_LOG_DIR`: Directory for log files.
        - `CALCULATOR_HISTORY_DIR`: Directory for history files.
      - **History Settings:**
@@ -182,7 +189,7 @@ Enhance the calculator application with the following features:
 7. **Command-Line Interface (REPL):**
    - Develop a user-friendly command-line interface using the **Read-Eval-Print Loop (REPL)** pattern.
    - **Supported Commands:**
-     - `add`, `subtract`, `multiply`, `divide`, `power`, `root`, `modulus`, `int_divide` – Perform calculations.
+     - `add`, `subtract`, `multiply`, `divide`, `power`, `root`, `modulus`, `int_divide`, `percent`, `abs_diff` – Perform calculations.
      - `history` – Display calculation history.
      - `clear` – Clear calculation history.
      - `undo` – Undo the last calculation.
@@ -299,7 +306,7 @@ Your midterm project will be evaluated based on the following criteria:
 |-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|------------|
 | **Functionality**                 | All mandatory features are fully implemented and function correctly. Optional features are also implemented successfully.                                                            | All mandatory features are implemented and function correctly. Most optional features are implemented.                                                            | Most mandatory features are implemented with minor issues. Few optional features are implemented.                                                    | Several mandatory features are missing or do not function correctly. Optional features are not implemented.                  | /40        |
 | **Code Quality**                  | Code is clean, well-organized, and follows best practices. Proper use of OOP principles and design patterns. Code is free of unnecessary complexity and duplication.                     | Code is organized and follows best practices. Good use of OOP principles and design patterns with minor issues.                                                          | Code follows some best practices but may have areas of improvement. Use of OOP principles and design patterns is inconsistent.                        | Code is disorganized, difficult to read, and does not follow best practices. Poor use of OOP principles and design patterns. | /20        |
-| **Unit Testing at least 90%**                  | Comprehensive unit tests covering all new features, including edge cases. All tests pass successfully.                                                                                | Good coverage of unit tests for new features with most edge cases handled. All tests pass successfully.                                                             | Basic unit tests are present but lack coverage for edge cases. Some tests may fail or have issues.                                                   | Inadequate or missing unit tests. Many tests fail or do not cover new features effectively.                                   | /15        |
+| **Unit Testing**                  | Comprehensive unit tests covering all new features, including edge cases. All tests pass successfully.                                                                                | Good coverage of unit tests for new features with most edge cases handled. All tests pass successfully.                                                             | Basic unit tests are present but lack coverage for edge cases. Some tests may fail or have issues.                                                   | Inadequate or missing unit tests. Many tests fail or do not cover new features effectively.                                   | /15        |
 | **Error Handling**                | Robust error handling for all new features. The application gracefully manages invalid inputs and unexpected scenarios without crashing.                                               | Good error handling with minor issues. Most invalid inputs and unexpected scenarios are managed gracefully.                                                        | Basic error handling is implemented but may not cover all invalid inputs or unexpected scenarios.                                                   | Inadequate error handling. The application crashes or behaves unpredictably with invalid inputs or unexpected scenarios.       | /10        |
 | **Logging Implementation**        | Logging is comprehensive and effectively records all new operations with detailed information. Proper use of logging levels and log management (if optional features implemented).       | Logging covers all new operations with sufficient detail. Proper use of logging levels.                                                                           | Basic logging is implemented but may lack detail or miss some new operations.                                                                      | Inadequate or missing logging for new operations. Logs lack useful information or are not properly managed.                    | /10        |
 | **Documentation**                 | Clear and thorough documentation. `README.md` includes detailed instructions on using new features. Additional documentation explains code enhancements effectively.                      | Good documentation. `README.md` includes instructions on new features. Additional documentation covers most code enhancements.                                       | Basic documentation is present but may lack detail. `README.md` includes some instructions on new features.                                           | Inadequate or missing documentation. `README.md` lacks instructions or does not explain new features effectively.              | /5         |
@@ -371,7 +378,7 @@ To enhance your understanding of the codebase, please refer to the following Pyt
   - [Real Python: Logging in Python](https://realpython.com/python-logging/): A comprehensive guide to implementing and configuring logging in Python applications.
 
 - **Testing and Coverage:**
-  - [Achieving 90%+ Test Coverage in Python](https://pytest-cov.readthedocs.io/en/latest/): Use coverage tools with pytest to measure and achieve full test coverage.
+  - [Achieving 100% Test Coverage in Python](https://pytest-cov.readthedocs.io/en/latest/): Use coverage tools with pytest to measure and achieve full test coverage.
 
 - **Version Control:**
   - [Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf): Quick reference for essential Git commands and workflows.
@@ -464,7 +471,7 @@ To ensure clarity on the functionalities you are expected to implement, here is 
 - **Purpose:** Implements various arithmetic operations using the Strategy Design Pattern.
 - **Classes:**
   - `Operation` (Abstract Base Class)
-  - `Addition`, `Subtraction`, `Multiplication`, `Division`, `Power`, `Root`, `Modulus`, `IntegerDivision`: Concrete implementations.
+  - `Addition`, `Subtraction`, `Multiplication`, `Division`, `Power`, `Root`, `Modulus`, `Percentage`, `AbsoluteDifference`, `IntegerDivision`: Concrete implementations.
   - `OperationFactory`: Factory class to create operation instances based on operation type.
 
 ### 9. Calculator REPL (`calculator_repl.py`)
@@ -472,7 +479,7 @@ To ensure clarity on the functionalities you are expected to implement, here is 
 - **Purpose:** Provides a command-line interface for user interaction.
 - **Features:**
   - Processes user commands and interacts with the `Calculator` class.
-  - Supports commands like `add`, `subtract`, `multiply`, `divide`, `power`, `root`, `modulus`, `int_divide`, `history`, `undo`, `redo`, `save`, `load`, `help`, `exit`.
+  - Supports commands like `add`, `subtract`, `multiply`, `divide`, `power`, `root`, `modulus`, `percent`, `abs_diff`, `int_divide`, `history`, `undo`, `redo`, `save`, `load`, `help`, `exit`.
   - Handles user input, displays results, and manages application flow.
 
 ### 10. GitHub Actions Workflow (`.github/workflows/python-app.yml`)
