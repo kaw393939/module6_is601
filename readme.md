@@ -8,16 +8,15 @@ Welcome to **Module 6**, the midterm assessment for your Python programming cour
 
 By the end of this module, you will be able to:
 
-1. **Utilize Git for version control and collaborative development.**
-2. **Write and execute unit tests and integration tests for Python applications using Pytest.**
-3. **Implement object-oriented programming principles in Python.**
-4. **Create and manipulate CSV files using Python and the `pandas` library.**
-5. **Apply professional programming techniques such as DRY and error handling using LBYL and EAFP.**
-6. **Develop a command-line application using the REPL pattern.**
-7. **Implement design patterns such as Factory, Observer, Strategy, Singleton, and Memento to enhance code scalability and maintainability.**
-8. **Implement comprehensive logging strategies to monitor and debug applications.**
-9. **Apply professional terminology and concepts related to web systems development.**
-10. **Set up GitHub Actions for Continuous Integration (CI), automating the execution of tests to demonstrate DevOps principles to ensure software quality.**
+- CLO 1: Utilize GIT for version control and collaborative development.
+- CLO 2: Navigate and execute basic commands in a Linux environment.
+- CLO 3: Create Python applications with automated testing.
+- CLO 4: Set up GitHub Actions for Continuous Integration (CI), automating the execution of tests and Docker builds to demonstrate DevOps principles to ensure software quality.
+- CLO 5: Develop a command-line application using the REPL pattern.
+- CLO 6: Implement object-oriented programming principles in Python.
+- CLO 7: Apply professional terminology and concepts related to web systems development.
+- CLO 8: Create and manipulate CSV files using Python.
+
 
 ## Learning Pathway
 
